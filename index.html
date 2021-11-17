@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+	<title>IV-Weather-Home</title>
+
+	<!-- Loading third party fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Loading main css file -->
+	<link rel="stylesheet" href="style.css">
+
+	<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+</head>
+
+
+<body onload="DefaultScreen()">
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="index.html" class="branding">
+					<img src="images/logo.png" alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">IV-Weather</h1>
+						<small class="site-description">Weather Updates</small>
+					</div>
+				</a>
+
+				<!-- Default snippet for navigation -->
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+					<ul class="menu">
+						<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
+						<li class="menu-item" > <a href="news1.html" onclick="scrollWin()">News</a></li>
+						<li class="menu-item"><a href="about.html">About us</a></li>
+						<!-- <li class="menu-item" id="tempBtn"> <a href="#">Temperature Map</a> </li> -->
+						<li class="menu-item"><a href="signin-signup.html">Sign up / Sign in</a></li>
+					</ul> <!-- .menu -->
+				</div> <!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+
+			</div>
+		</div> <!-- .site-header -->
+
+		<!-- <div class="hero" data-bg-image="images/banner.png"  style="background-image: url(https://source.unsplash.com/weekly?water);"> -->
+			<div class="hero" style="background-image: url(https://source.unsplash.com/1600x900/?weather);">
+
+				<div class="container">
+					<form action="#" class="find-location">
+						<input type="text" placeholder="Find your location..." id="searchBar">
+						<input type="submit" value="Find" id="searchBtn" onclick="GetInfo()">
+					</form>
+		
+				</div>
+				<div class="forecast-table">
+					<div class="container">
+						<div class="forecast-container">
+							<div class="today forecast">
+								<div class="forecast-header">
+									<div class="day">Wednesday</div>
+									<div class="date">17 Oct</div>
+								</div> <!-- .forecast-header -->
+								<div class="forecast-content">
+									<div class="location" id="city">Weather in New York</div>
+									<div class="degree">
+										<div class="num" id="temperature1">23<sup>o</sup>C</div>
+										<div class="forecast-icon">
+											<img src="https://openweathermap.org/img/wn/04n.png" id="icon1" alt="" width=90>
+										</div>
+									</div>
+									<div class="minValues" id="day1Min">Loading...</div>
+									<div class="maxValues" id="day1Max">Loading...</div>
+									<div class="wind" id="windSpeed1">Loading</div>
+								</div>
+							</div>
+							<div class="forecast">
+								<div class="forecast-header">
+									<div class="day">Thursday</div>
+								</div> <!-- .forecast-header -->
+								<div class="forecast-content">
+									<div class="forecast-icon">
+										<img src="https://openweathermap.org/img/wn/04n.png" alt="" width=48 id="icon2">
+									</div>
+									<div class="num" id="temperature2">23<sup>o</sup>C</div>
+									<div class="minValues" id="day2Min">Loading...</div>
+									<div class="maxValues" id="day2Max">Loading...</div>
+									<div class="wind" id="windSpeed2">Loading</div>
+		
+								</div>
+							</div>
+							<div class="forecast">
+								<div class="forecast-header">
+									<div class="day">Friday</div>
+								</div> <!-- .forecast-header -->
+								<div class="forecast-content">
+									<div class="forecast-icon">
+										<img src="https://openweathermap.org/img/wn/04n.png" alt="" width=48 id="icon3">
+									</div>
+									<div class="num" id="temperature3">23<sup>o</sup>C</div>
+									<div class="minValues" id="day3Min">Loading...</div>
+									<div class="maxValues" id="day3Max">Loading...</div>
+									<div class="wind" id="windSpeed3">Loading</div>
+		
+								</div>
+							</div>
+							<div class="forecast">
+								<div class="forecast-header">
+									<div class="day">Saturday</div>
+								</div> <!-- .forecast-header -->
+								<div class="forecast-content">
+									<div class="forecast-icon">
+										<img src="https://openweathermap.org/img/wn/04n.png" alt="" width=48 id="icon4">
+									</div>
+									<div class="num" id="temperature4">23<sup>o</sup>C</div>
+									<div class="minValues" id="day4Min">Loading...</div>
+									<div class="maxValues" id="day4Max">Loading...</div>
+									<div class="wind" id="windSpeed4">Loading</div>
+		
+								</div>
+							</div>
+							<div class="forecast">
+								<div class="forecast-header">
+									<div class="day">Sunday</div>
+								</div> <!-- .forecast-header -->
+								<div class="forecast-content">
+									<div class="forecast-icon">
+										<img src="https://openweathermap.org/img/wn/04n.png" alt="" width=48 id="icon5">
+									</div>
+									<div class="num" id="temperature5">23<sup>o</sup>C</div>
+									<div class="minValues" id="day5Min">Loading...</div>
+									<div class="maxValues" id="day5Max">Loading...</div>
+									<div class="wind" id="windSpeed5">Loading</div>
+		
+								</div>
+							</div>
+		
+		
+						</div>
+					</div>
+				</div>
+			</div>
+		<main class="main-content">
+			<!-- <div class="fullwidth-block">
+					<div class="container">
+						<h2 class="section-title">Live cameras</h2>
+						<div class="row">
+							<div class="col-md-3 col-sm-6">
+								<div class="live-camera">
+									<figure class="live-camera-cover"><img src="images/live-camera-1.jpg" alt=""></figure>
+									<h3 class="location">New York</h3>
+									<small class="date">8 oct, 8:00AM</small>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="live-camera">
+									<figure class="live-camera-cover"><img src="images/live-camera-2.jpg" alt=""></figure>
+									<h3 class="location">Los Angeles</h3>
+									<small class="date">8 oct, 8:00AM</small>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="live-camera">
+									<figure class="live-camera-cover"><img src="images/live-camera-3.jpg" alt=""></figure>
+									<h3 class="location">Chicago</h3>
+									<small class="date">8 oct, 8:00AM</small>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="live-camera">
+									<figure class="live-camera-cover"><img src="images/live-camera-4.jpg" alt=""></figure>
+									<h3 class="location">London</h3>
+									<small class="date">8 oct, 8:00AM</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>  -->
+
+			<div class="fullwidth-block" data-bg-color="#262936">
+				<div class="container">
+					<H1>Monthly Weather Forecast</H1>
+					<div class="row">
+						<div class="col-md-4">
+							
+							<div class="news">
+								<div class="date">28.10</div>
+								<h3><a href="#">low pressure areas maTwoy form over the Andaman Sea  </a></h3>
+								<p>low pressure areas maTwoy form over the Andaman Sea and Bay of Bengal and one may further intensify into the depression. Weather will be partly cloudy to cloudy over the Andaman Sea and the Bay of Bengal.</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="news">
+								<div class="date">17.02</div>
+								<h3><a href="#">Western Disturbances  </a></h3>
+								<p>Nobis architecto consequatur ab, ea, eum autem aperiam accusantium placeat vitae
+									facere explicabo temporibus minus distinctio cum optio quis, dignissimos eius
+									aspernatur fuga. Praesentium totam, corrupti beatae amet expedita veritatis.</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="news">
+								<div class="date">18.01</div>
+								<h3><a href="#">Will Give Monthly Rain Forecast From Coming Monsoon</a></h3>
+								<p>To better its monsoon forecast, the Indian Meteorological Department (IMD) will use the multi-model ensemble approach and also give a monthly outlook for the four months of the rainfall season, its director general (DG) said today.
+									
+									</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h1 id="temperatureMap"><b>Temperature Map</b></h1>
+
+
+			<center> <iframe width="700" height="450"
+					src="https://embed.windy.com/embed2.html?lat=14.264&lon=72.905&detailLat=14.264&detailLon=72.905&width=650&height=450&zoom=5&level=surface&overlay=temp&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
+					frameborder="0"></iframe></center>
+		</main>
+		<!-- <div class="fullwidth-block">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4">
+								<h2 class="section-title">Application features</h2>
+								<ul class="arrow-feature">
+									<li>
+										<h3>Natus error sit voluptatem accusantium</h3>
+										<p>Doloremque laudantium totam rem aperiam Inventore veritatis et quasi architecto beatae vitae.</p>
+									</li>
+									<li>
+										<h3>Natus error sit voluptatem accusantium</h3>
+										<p>Doloremque laudantium totam rem aperiam Inventore veritatis et quasi architecto beatae vitae.</p>
+									</li>
+									<li>
+										<h3>Natus error sit voluptatem accusantium</h3>
+										<p>Doloremque laudantium totam rem aperiam Inventore veritatis et quasi architecto beatae vitae.</p>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+								<h2 class="section-title">Weather analyssis</h2>
+								<ul class="arrow-list">
+									<li><a href="#">Accusantium doloremque laudantium rem aperiam</a></li>
+									<li><a href="#">Eaque ipsa quae ab illo inventore veritatis quasi</a></li>
+									<li><a href="#">Architecto beatae vitae dicta sunt explicabo</a></li>
+									<li><a href="#">Nemo enim ipsam voluptatem quia voluptas</a></li>
+									<li><a href="#">Aspernatur aut odit aut fugit, sed quia consequuntur</a></li>
+									<li><a href="#">Magni dolores eos qui ratione voluptatem sequi</a></li>
+									<li><a href="#">Neque porro quisquam est qui dolorem ipsum quia</a></li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+								<h2 class="section-title">Awesome Photos</h2>
+								<div class="photo-grid">
+									<a href="#"><img src="images/thumb-1.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-2.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-3.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-4.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-5.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-6.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-7.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-8.jpg" alt="#"></a>
+									<a href="#"><img src="images/thumb-9.jpg" alt="#"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+ -->
+		<!-- <h1 style="margin-top: 35px; margin-left: 190px;">NEWS</h1> -->
+
+		<div class="fullwidth-block">
+			<div class="container">
+				<div class="row">
+					<div class="content col-md-8">
+						<div class="post">
+
+							<h1 style="font-size: 35px; font-weight: bold;">News</h1>
+							<h3 class="entry-title">Landslide in Krishnagiri district delinks 32 villages; Red alert in Chennai</h3>
+							<div class="featured-image"><img src="images/news1.jpg" alt=""></div>
+							<p>A landslide at Bargur in the Krishnagiri district of Tamil Nadu cut off the town from 32 villages, news agency PTI reported. Boulders and mud fell on the ghat road affecting traffic between Anthiyur in Erode district of Tamil Nadu and Mysore in Karnataka State via Bargur, according to revenue officials. </p>
+							<a href="news1.html" class="button">Read more</a>
+						</div>
+
+						<div class="post">
+							<h2 class="entry-title">Mumbai likely to receive rainfall between November 16 to 19</h2>
+							<div class="featured-image"><img src="images/news2" alt=""></div>
+							<p>The brief spell of winter-like chill weather has passed. Maharashtra and the adjoining states are now set to witness some wet days, with thunder and lightning.According to weathermen, Mumbai is likely to receive rainfall between November 16 and November 19. </p>
+							<a href="news2.html" class="button">Read more</a>
+						</div>
+
+						<div class="post">
+							<h2 class="entry-title">Vancouver Weather: After the storm, dry and sunny today</h2>
+							<div class="featured-image"><img src="images/news3.jpg" alt=""></div>
+							<p>Tuesday, Nov. 16. After Monday’s destructive storm, Tuesday is going to be mainly sunny with a high of 8 C. Tonight, there will be some clouds, and an overnight low of 2 C. Environment and Climate Change Canada has lifted rain and wind warnings over the B.C. south coast, although it has issued a snowfall warning for the Coquihalla Highway between Hope and Merritt, which is expected to get up to 5 cm of snow this morning. Some flurries may linger into the afternoon.</p>
+							<a href="news3.html" class="button">Read more</a>
+						</div>
+					</div>
+					<div class="sidebar col-md-3 col-md-offset-1">
+						<div class="widget">
+							<h3 class="widget-title">Hot News</h3>
+							<ul class="arrow-list">
+								<li><a href="news1.html">Landslide in Krishnagiri district delinks 32 villages; Red alert in Chennai</a></li>
+								<li><a href="news2.html">Mumbai likely to receive rainfall between November 16 to 19</a></li>
+								<li><a href="news3.html">Nemo enim ipsam voluptatem quia voluptas</a></li>
+
+							</ul>
+						</div>
+
+						<!-- <div class="widget">
+					<h3 class="widget-title">Categories</h3>
+					<ul class="arrow-list">
+						<li><a href="#">Nemo enim ipsam</a></li>
+						<li><a href="#">Voluptatem voluptas</a></li>
+						<li><a href="#">Aspernatur aut odit</a></li>
+						<li><a href="#">Consequuntur magni</a></li>
+						<li><a href="#">Dolores ratione</a></li>
+						<li><a href="#">Voluptatem nesciunt</a></li>
+						<li><a href="#">Neque porro quisquam</a></li>
+						<li><a href="#">Dolorem ipsum quia</a></li>
+					</ul>
+				</div> -->
+
+						<!-- <div class="widget top-rated">
+					<h3 class="widget-title">Top rated posts</h3>
+					<ul>
+						<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
+						<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
+						<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
+						<li><h3 class="entry-title"><a href="#">Doloremque laudantium lorem</a></h3><div class="rating"><strong>5.5</strong> (759 rates)</div></li>
+					</ul>
+				</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<br><br>
+
+		<!-- .main-content -->
+
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<form action="#" class="subscribe-form">
+							<input type="text" placeholder="Enter your email to subscribe...">
+							<input type="submit" value="Subscribe">
+						</form>
+					</div>
+					<div class="col-md-3 col-md-offset-1">
+						<div class="social-links">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							
+						</div>
+					</div>
+				</div>
+
+				<p class="colophon"><h1>IV Weather.</h1> </p>
+			</div>
+		</footer> <!-- .site-footer -->
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/app.js"></script>
+	<script src="scrolling.js"></script>
+	<script src="script.js"></script>
+
+</body>
+<script>
+	function scrollWin() {
+  window.scrollTo(0, 1615);
+}
+</script>
+</html>
