@@ -18,7 +18,7 @@ Access to the website and type in the city in lower cases and you will get the c
 
 https://vinodk-17.github.io/weatherapiminiproject/
 
-## Contribution :
+## How to Contribute :
 
 You can contribute in this project by adding some new features or anything in your mind 
 To contribute 
