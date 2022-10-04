@@ -49,6 +49,8 @@ To contribute
 4. Do your changes 
 5. Make pull request and wait for review.
 
+## Contributors:
+
 <a href="https://github.com/Vinodk-17/weatherapiminiproject/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Vinodk-17/weatherapiminiproject" />
 </a>
