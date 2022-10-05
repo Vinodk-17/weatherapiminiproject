@@ -54,6 +54,7 @@ To contribute
 {
     "github-username": "YOUR-GITHUB-USERNAME" 
 }
+```
 * for [example](https://github.com/Vinodk-17/weatherapiminiproject/tree/main/contributors) 
 
 ## Contributors:
