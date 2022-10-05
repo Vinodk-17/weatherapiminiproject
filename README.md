@@ -9,15 +9,10 @@
 <a href="https://github.com/Vinodk-17/weatherapiminiproject" ><img src="https://img.shields.io/badge/Contributions-welcome-green.svg?style=flat&logo=github" alt="Contributions" /></a>
 </div>
 
-### This repository aims to help code beginners with their first successful pull request and open source contribution. :partying_face:
-
-:star: Feel free to use this repo to make your first contribution to an open-source project on GitHub. Practice making your first pull request to a public repository before doing the real thing!
-
 # Don't forget to add your name in [contributors](https://github.com/Vinodk-17/weatherapiminiproject/tree/main/contributors) folder
 
 :star: Make sure to grab some cool swags during Hacktoberfest by getting involved in the open-source community.
 
-### This repository is open to all members of the GitHub community. Any member can contribute to this project! :grin:
 
 # Weather-app
 
@@ -49,6 +44,21 @@ To contribute
 4. Do your changes 
 5. Make pull request and wait for review.
 6. Make sure you have entered your name in contributor folder as mentioned (It's your responsibility)
+
+# ❄Format to add name in contributor folder
+
+* Create a file 
+* file name = yourname.json (yourname = put your name)
+* Then put your github username in your file
+
+* for [example](https://github.com/Vinodk-17/weatherapiminiproject/tree/main/contributors) 
+
+## format
+<pre> {
+  "github-username": "shashankrai2001"
+ }
+
+</pre>
 
 ## Contributors:
 
