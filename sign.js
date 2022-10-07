@@ -1,11 +1,4 @@
-// new Vue({
-//     el: '#app',
-//     data: () => {
-//       return {
-//         signUp: false
-//       }
-//     }
-//   })
+
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');

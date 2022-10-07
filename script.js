@@ -8,7 +8,10 @@ function GetInfo() {
   fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ newName.value+'&appid=32ba0bfed592484379e51106cef3f204')
   .then(response => response.json())
   .then(data => {
-  
+
+    // for(i=0; i<5; i++){
+    //   document.getElementById("Day" + (i+1)).innerHTML = ;
+    // }
   
     for(i=0; i<5; i++){
       document.getElementById("temperature" + (i+1)).innerHTML =  Number(data.list[i].main.temp_min - 273.15).toFixed(1) + "°";
@@ -49,51 +52,47 @@ function GetInfo() {
   }
   
   
-  
-    //------------------------------------------------------------
-  
-  
-  /*
-  document.getElementById("day1Min").innerHTML = Math.round(data.list[0].main.temp_min - 273.15, -2);
-  document.getElementById("day2Min").innerHTML = Math.round(data.list[1].main.temp_min - 273.15, -2);
-  document.getElementById("day3Min").innerHTML = Math.round(data.list[2].main.temp_min - 273.15, -2);
-  document.getElementById("day4Min").innerHTML = Math.round(data.list[3].main.temp_min - 273.15, -2);
-  document.getElementById("day5Min").innerHTML = Math.round(data.list[4].main.temp_min - 273.15, -2);*/
-  
-  /*document.getElementById("day1Max").innerHTML = Math.round(data.list[0].main.temp_max - 273.15, -2);
-  document.getElementById("day2Max").innerHTML = Math.round(data.list[0].main.temp_max - 273.15, -2);
-  document.getElementById("day3Max").innerHTML = Math.round(data.list[0].main.temp_max - 273.15, -2);
-  document.getElementById("day4Max").innerHTML = Math.round(data.list[0].main.temp_max - 273.15, -2);
-  document.getElementById("day5Max").innerHTML = Math.round(data.list[0].main.temp_max - 273.15, -2);*/
-  
-  /*document.getElementById("img1").src = "http://openweathermap.org/img/w/"+
-  data.list[0].weather[0].icon
-  +".png";
-  document.getElementById("img2").src = "http://openweathermap.org/img/w/"+
-  data.list[1].weather[0].icon
-  +".png";
-  document.getElementById("img3").src = "http://openweathermap.org/img/w/"+
-  data.list[2].weather[0].icon
-  +".png";
-  document.getElementById("img4").src = "http://openweathermap.org/img/w/"+
-  data.list[3].weather[0].icon
-  +".png";
-  document.getElementById("img5").src = "http://openweathermap.org/img/w/"+
-  data.list[4].weather[0].icon
-  +".png";*/
-  
-  /*
-  document.getElementById("day1").innerHTML = weekday[CheckDay(0)];
-  document.getElementById("day2").innerHTML = weekday[CheckDay(1)];
-  document.getElementById("day3").innerHTML = weekday[CheckDay(2)];
-  document.getElementById("day4").innerHTML = weekday[CheckDay(3)];
-  document.getElementById("day5").innerHTML = weekday[CheckDay(4)];*/
-  
-  /*weekday[0] = "Sunday";
-  weekday[1] = "Monday";
-  weekday[2] = "Tuesday";
-  weekday[3] = "Wednesday";
-  weekday[4] = "Thursday";
-  weekday[5] = "Friday";
-  weekday[6] = "Saturday";*/
-  
+
+  //--------------------------------- Date Function ---------------------//
+
+  //------------Updating the Five days ---------------------------//
+  var myDate = new Date();
+        var myDay = myDate.getDay();
+ var weekday = ['Sunday', 'Monday', 'Tuesday',
+            'Wednesday', 'Thursday', 'Friday', 'Saturday'
+        ];
+
+     for(i=0; i<5; i++){
+  if(myDay + i >6){
+    document.getElementById("day" + (i+1)).innerHTML = weekday[myDay + i-7] ;
+  }
+  else{
+    document.getElementById("day" + (i+1)).innerHTML = weekday[myDay + i] ;
+  }
+          
+    }
+
+//---------------updating the intial date-------------------//
+
+var Months = ['January', 'February', 'March', 'April', 
+                'May', 'June', 'July', 'August', 'September',
+                'October', 'November', 'December'];
+          
+        var currentDay = new Date();
+          
+        // Get the current day name
+        var day = currentDay.getDate();
+          
+        // Get the current month name
+        var month = Months[currentDay.getMonth()]; 
+if(day<10){
+        document.getElementById("date1").innerHTML = "0"+day +"  "+ month  ;
+}
+else{
+  document.getElementById("date1").innerHTML = day +"  "+ month  ;
+}
+
+
+
+
+   
