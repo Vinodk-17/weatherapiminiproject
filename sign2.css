@@ -5,7 +5,9 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
     background: #f6f5f7;
     display: flex;
     flex-direction: column;
@@ -22,11 +24,12 @@ h1 {
 }
 
 p {
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-size: 16px;
     font-weight: 100;
-    line-height: 20px;
-    letter-spacing: .5px;
-    margin: 20px 0 30px;
+    line-height: 21px;
+    letter-spacing: 2px;
+    margin: 50px 0px 30px;
 }
 
 span {
